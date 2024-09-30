@@ -1,0 +1,6 @@
+numpy_typing.egg-info/
+dist/
+setup.md
+test.py
+
+.vscode/
