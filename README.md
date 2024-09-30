@@ -56,7 +56,7 @@ c = np.concatenate([a, b])
 # automatically infer the type of c as np.float32_1d[ax.time]
 ```
 
-If you want the library to support more types, more numpy functions or if you have any suggestion, feel free to open an issue on our [github](https://github.com/user/repo/blob/branch/other_file.md).
+If you want the library to support more types, more numpy functions or if you have any suggestion, feel free to open an issue on our [github](https://github.com/melpiro/numpy-typing).
 
 
 
