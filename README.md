@@ -11,13 +11,11 @@ from numpy_typing import np, ax
 
 The modified version of numpy imported there contain sumplementary annotations in order to have smart and automatic inferred annotation.
 
-> Remark : The numpy imported there it is not slower than the classical numpy (``import numpy as np``). When calling a numpy function, its code is directly called without any wrapper. Numpy-typing only overload numpy's function annotations.
+> Remark : This import load the real Numpy library. As Numpy-Typing do not use wrapper, every Numpy functions are directly called without intermediate code. Hence Numpy-Typing is as fast as Numpy.
 
 
 You can then use new annotation like:
 ```python
-from numpy_typing import np, ax
-
 float32Array3d:np.float32_3d[ax.batch, ax.sample, ax.feature] = np.zeros((3, 3, 3))
 v = float32Array3d[0, 0, 0] # v automatically inferred as float32
 ```
@@ -32,7 +30,8 @@ The library add new array_types annotation:
 
 Where ***n*** is the number of dimension of the array. The value of ***n*** is for instance only supported between [1, 4].
 
-Moreover, as the library dosen't support yet all the numpy types, you can also use the generic type ```np.array_(1-4)d[dtype, axis1, ...]``` without type.
+Moreover, as the library dosen't support yet all the numpy types, you can also use the generic type
+```np.array_(1-4)d[dtype, axis1, ...]```
 
 Then you should specify for each dimension the role of the dimension:
 - ax.batch: The axis select the nth batch
@@ -48,8 +47,6 @@ Then you should specify for each dimension the role of the dimension:
 
 Here is an example of useful smart annotation:
 ```python
-from numpy_typing import np, ax
-
 a:np.float32_1d[ax.time] = np.zeros((64))
 b:np.float32_1d[ax.time] = np.zeros((64))
 c = np.concatenate([a, b])

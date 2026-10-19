@@ -1,5 +1,3 @@
-
-
 from . import content as np
-from . import axis as ax
-
+from .content import axis as ax
+from .content import wrapper

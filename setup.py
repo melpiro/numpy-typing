@@ -1,12 +1,10 @@
-
-
 from setuptools import setup, find_packages
 import os
 
 if (os.path.exists("./dist")):
     os.system("rm -r ./dist/*")
 
-VERSION = "1.0.2"
+VERSION = "1.1.1"
 print(f"VERSION : {VERSION}")
 DESCRIPTION = 'Improved numpy typing anotations'
 
@@ -28,9 +26,8 @@ setup(
     packages=find_packages(),
     install_requires=["numpy"],
     package_data={'': ['*.py']},
-    keywords=['python', 'deep learning', 'tensorflow', 'aircraft', 'classification', 'ADS-B'],
+    keywords=['python', 'numpy', 'typing', 'type hinting'],
     classifiers= [
-        "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
